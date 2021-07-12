@@ -2,15 +2,12 @@ import React from 'react';
 import {
 Text,
 Image,
-View,
-TouchableOpacity,
-TouchableOpacityProps /* PARA PASSA AS PROPIERADE DE TOUCHABLE_OPACITY PELO COMPONENTE NA INTERFACE */
-} from 'react-native'
-
+View } from 'react-native'
+import { RectButton, RectButtonProps } from 'react-native-gesture-handler'
 import DiscordImg from '../../assets/discord.png'
 import {styles} from './styles'
 
-type Props = TouchableOpacityProps & {
+type Props = RectButtonProps & {
   title?: string; /* É BOM PARA QUANDO A PROPRIEDADE NAO 
                   É OBRIGATORIA, SENDO ASSIM CASO 
                   NÃO SEJA PASSADO O COMPONENTE NAO DÁ ERRO */
@@ -18,7 +15,7 @@ type Props = TouchableOpacityProps & {
 
 export function ButtonIcon({title, ...rest}: Props){
   return(
-    <TouchableOpacity 
+    <RectButton 
     style={styles.container}
     {...rest}
     
@@ -31,6 +28,6 @@ export function ButtonIcon({title, ...rest}: Props){
       <Text style={styles.title}>
         { title }
       </Text>
-    </TouchableOpacity>
+    </RectButton>
   )
 }
