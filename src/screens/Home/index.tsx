@@ -4,10 +4,12 @@ import { ButtonAdd } from '../../components/ButtonAdd';
 import { CategorySelect } from '../../components/CategorySelect';
 import { ListHeader } from '../../components/ListHeader';
 import { Appointment } from '../../components/Appointment';
-
+import { Background } from '../../components/Background'
 import { Profile } from '../../components/Profile';
 import {styles} from './styles'
 import { ListDivider } from '../../components/ListDivider';
+
+import {useNavigation} from '@react-navigation/native'
 
 export function Home(){
   const [category, setCategory] = useState('')
@@ -30,23 +32,31 @@ export function Home(){
         id: '2',
         name: 'BrawlStars',
         icon: null,
-        owner: true
+        owner: false
       },
       category: '2',
       date: '15/07 às 21:00h',
       description: 'Toca pra miiiim!'
     }
   ]
+  const navigation = useNavigation()
 
 
   function handleCategorySelect(categoryId: string){
     categoryId === category ? setCategory('') : setCategory(categoryId)
   }
+  function handleAppointmentCreate(){
+    navigation.navigate('AppointmentCreate')
+  }
+
+  function handleAppointmentDetails(){
+    navigation.navigate('AppointmentDetails')
+  }
   return(
-    <View>
+    <Background>
       <View style={styles.header} >
         <Profile />
-        <ButtonAdd />
+        <ButtonAdd onPress={handleAppointmentCreate}/>
       </View>
 
         <CategorySelect 
@@ -60,7 +70,9 @@ export function Home(){
             data={appointment} 
             keyExtractor={item => item.id} 
             renderItem={({item}) => (
-              <Appointment data={item}/>
+              <Appointment data={item} 
+                onPress={handleAppointmentDetails}
+              />
 
             )}
             ItemSeparatorComponent={() => <ListDivider />}
@@ -70,6 +82,6 @@ export function Home(){
             
         </View>
 
-    </View>
+    </Background>
   )
 }
