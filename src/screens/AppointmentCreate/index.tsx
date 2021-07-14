@@ -45,7 +45,7 @@ export function AppointmentCreate(){
             <RectButton onPress={handleOpenGuilds}>
               <View style={styles.select}>
                 {
-                  guild ? 
+                  guild.id ? 
                   
                   <GuildIcon id={guild.id}/>
                   :
