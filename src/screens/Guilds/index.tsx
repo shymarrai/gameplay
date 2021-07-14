@@ -14,12 +14,36 @@ export function Guilds({handleGuildSelect}: Props){
   const guilds = [
     {
       id: '1',
-      name: 'Lolzin',
+      name: 'League of Legends',
       icon: null,
       owner: true
     },
     {
       id: '2',
+      name: 'BrawlStars',
+      icon: null,
+      owner: true
+    },
+    {
+      id: '3',
+      name: 'BrawlStars',
+      icon: null,
+      owner: true
+    },
+    {
+      id: '4',
+      name: 'BrawlStars',
+      icon: null,
+      owner: true
+    },
+    {
+      id: '5',
+      name: 'BrawlStars',
+      icon: null,
+      owner: true
+    },
+    {
+      id: '6',
       name: 'BrawlStars',
       icon: null,
       owner: true
@@ -37,8 +61,10 @@ export function Guilds({handleGuildSelect}: Props){
           onPress={() => handleGuildSelect(item)}
         />
       )}
-      ItemSeparatorComponent={() => <ListDivider />}
-      style={styles.guilds}
+        ItemSeparatorComponent={() => <ListDivider  isCentered />}
+        ListHeaderComponent={() => <ListDivider isCentered />}
+        contentContainerStyle={{paddingBottom:69, paddingTop:100}}
+        style={styles.guilds}
     />
     </View>
   )

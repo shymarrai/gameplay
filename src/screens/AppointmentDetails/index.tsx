@@ -79,7 +79,7 @@ export function AppointmentDetails(){
       source={BannerImg}>
         <View style={styles.bannerContent}>
           <Text style={styles.title}>
-            Lolzin
+            League of Legends
           </Text>
           <Text style={styles.subtitle}>
             É hoje que eu saio do prata!

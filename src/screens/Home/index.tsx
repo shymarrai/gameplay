@@ -18,7 +18,7 @@ export function Home(){
       id: '1',
       guild: {
         id: '1',
-        name: 'Lolzin',
+        name: 'League of Legends',
         icon: null,
         owner: true
       },
@@ -37,7 +37,55 @@ export function Home(){
       category: '2',
       date: '15/07 às 21:00h',
       description: 'Toca pra miiiim!'
-    }
+    },
+    {
+      id: '3',
+      guild: {
+        id: '2',
+        name: 'BrawlStars',
+        icon: null,
+        owner: false
+      },
+      category: '2',
+      date: '15/07 às 21:00h',
+      description: 'Toca pra miiiim!'
+    },
+    {
+      id: '4',
+      guild: {
+        id: '2',
+        name: 'BrawlStars',
+        icon: null,
+        owner: false
+      },
+      category: '2',
+      date: '15/07 às 21:00h',
+      description: 'Toca pra miiiim!'
+    },
+    {
+      id: '5',
+      guild: {
+        id: '2',
+        name: 'BrawlStars',
+        icon: null,
+        owner: false
+      },
+      category: '2',
+      date: '15/07 às 21:00h',
+      description: 'Toca pra miiiim!'
+    },
+    {
+      id: '6',
+      guild: {
+        id: '2',
+        name: 'BrawlStars',
+        icon: null,
+        owner: false
+      },
+      category: '2',
+      date: '15/07 às 21:00h',
+      description: 'Toca pra miiiim!'
+    },
   ]
   const navigation = useNavigation()
 
@@ -63,24 +111,23 @@ export function Home(){
           categorySelected={category}
           setCategory={handleCategorySelect}
         />
-        <View style={styles.content}>
-          <ListHeader title="Partidas agendadas" subtitle="Total 6" />
+        
+        <ListHeader title="Partidas agendadas" subtitle="Total 6" />
 
-          <FlatList 
-            data={appointment} 
-            keyExtractor={item => item.id} 
-            renderItem={({item}) => (
-              <Appointment data={item} 
-                onPress={handleAppointmentDetails}
-              />
+        <FlatList 
+          data={appointment} 
+          keyExtractor={item => item.id} 
+          renderItem={({item}) => (
+            <Appointment data={item} 
+              onPress={handleAppointmentDetails}
+            />
 
-            )}
+          )}
             ItemSeparatorComponent={() => <ListDivider />}
             style={styles.matches}
+            contentContainerStyle={{paddingBottom:69}}
             showsVerticalScrollIndicator={false}
-            />
-            
-        </View>
+          />
 
     </Background>
   )
